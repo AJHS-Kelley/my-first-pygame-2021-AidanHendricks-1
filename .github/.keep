@@ -1,5 +1,10 @@
-# My First PyGame, Aidan Hendricks, 11/30/21, 12:14, v0.1
+# My First PyGame, Aidan Hendricks, 11/30/21, 12:24, v0.2
 
 import pygame, sys
 from pygame.locals import *
 
+# Initialize PyGame
+pygame.init()
+
+# Setup the Window to draw on.
+windowSurface = pygame.display.setmode((500, 400), 0, 32)
