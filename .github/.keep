@@ -1,1 +1,5 @@
-# My First PyGame, Aidan Hendricks, 11/30/21, 12:14, v0.0
+# My First PyGame, Aidan Hendricks, 11/30/21, 12:14, v0.1
+
+import pygame, sys
+from pygame.locals import *
+
