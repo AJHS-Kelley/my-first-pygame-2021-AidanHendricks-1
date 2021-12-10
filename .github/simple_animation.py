@@ -9,7 +9,7 @@ pygame.init()
 # Setup window
 WINDOWWIDTH = 400
 WINDOWHEIGHT = 400
-windowsurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
+windowSurface = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT), 0, 32)
 pygame.display.set_caption('Animation Example!')
 
 # Setup direction variable
@@ -53,7 +53,7 @@ while True:
         if b['dir'] == UPLEFT:
             b['rect'].left -= MOVESPEED
             b['rect'].top -= MOVESPEED
-        if b['dire'] == UPRIGHT:
+        if b['dir'] == UPRIGHT:
             b['rect'].left += MOVESPEED
             b['rect'].top -= MOVESPEED
 
@@ -63,24 +63,24 @@ while True:
                 b['dir'] = DOWNLEFT
             if b['dir'] == UPRIGHT:
                 b['dir'] = DOWNRIGHT
-            if b['rec'].bottom > WINDOWHEIGHT:
-                # The box has moved past the bottom
-                if b['dir'] == DOWNLEFT:
-                    b['dir'] = UPLEFT
-                if b['dir'] == DOWNRIGHT:
-                    b['dir'] = UPRIGHT
-            if b['rect'].left < 0:
-                # The box has move past the left
-                if b['dir'] == DOWNLEFT:
-                    b['dir'] = DOWNRIGHT
-                if b['dir'] == UPLEFT:
-                    b['dir'] = UPRIGHT
-            if b['rect'].left > WINDOWWIDTH:
-                # The box has moved past the right
-                if b['dir'] == DOWNRIGHT:
-                    b['dir'] = DOWNLEFT
-                if b['dir'] == UPRIGHT:
-                    b['dir'] = UPLEFT
+        if b['rect'].bottom > WINDOWHEIGHT:
+            # The box has moved past the bottom
+            if b['dir'] == DOWNLEFT:
+                b['dir'] = UPLEFT
+            if b['dir'] == DOWNRIGHT:
+                b['dir'] = UPRIGHT
+        if b['rect'].left < 0:
+            # The box has move past the left
+            if b['dir'] == DOWNLEFT:
+                b['dir'] = DOWNRIGHT
+            if b['dir'] == UPLEFT:
+                b['dir'] = UPRIGHT
+        if b['rect'].left > WINDOWWIDTH:
+            # The box has moved past the right
+            if b['dir'] == DOWNRIGHT:
+                b['dir'] = DOWNLEFT
+            if b['dir'] == UPRIGHT:
+                b['dir'] = UPLEFT
 
         # Draw box onto game surface
         pygame.draw.rect(windowSurface, b['color'], b['rect'])
