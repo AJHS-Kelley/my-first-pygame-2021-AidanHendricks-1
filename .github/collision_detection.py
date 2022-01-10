@@ -1,7 +1,7 @@
 # PyGame Collision Practice, Aidan Hendricks, 1/04/22, 12:02 AM, v0.5
 
 import pygame, sys, random
-import pygame.locals import *
+from pygame.locals import *
 
 # Setup PyGame
 pygame.init()
