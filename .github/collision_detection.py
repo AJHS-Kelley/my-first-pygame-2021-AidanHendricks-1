@@ -1,4 +1,4 @@
-# PyGame Collision Practice, Aidan Hendricks, 1/10/22, 11:45 AM, v0.7
+# PyGame Collision Practice, Aidan Hendricks, 1/18/22, 11:38 AM, v0.8
 
 import pygame, sys, random
 from pygame.locals import *
@@ -74,3 +74,5 @@ while True:
                 player.top = random.radiant(0, WINDOWHEIGHT - player.height)
                 player.left = random.radiant(0, WINDOWWIDTH - player.width)
 
+        if event.type == MOUSEBUTTONUP:
+            foods.append(pygame.rect(event.pos[0], event.pod[1]), FOODSIZE, FOODSIZE)
