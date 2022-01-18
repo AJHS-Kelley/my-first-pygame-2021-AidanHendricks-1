@@ -1,4 +1,4 @@
-# PyGame Collision Practice, Aidan Hendricks, 1/18/22, 11:45 AM, v0.9
+# PyGame Collision Practice, Aidan Hendricks, 1/18/22, 11:56 AM, v1.0
 
 import pygame, sys, random
 from pygame.locals import *
@@ -84,5 +84,19 @@ while True:
         foods.append(pygame.Rect(random.randint(0, WINDOWWIDTH - FOODSIZE), random.randint(0, WINDOWHEIGHT - FOODSIZE), FOODSIZE, FOODSIZE))
 
     # DRAW white background on Window Surface.
-    windowsurface.fill(WHITE)
+    windowSurface.fill(WHITE)
 
+    # Move the player.
+    if moveDown and player.bottom < WINDOWHEIGHT:
+        player.top += MOVESPEED
+    if moveUp and player.top > 0:
+        player.top -= MOVESPEED
+    if moveLeft and player.left > 0:
+        player.left -= MOVESPEED
+    if moveRight and player.right < WINDOWWIDTH:
+        player.right += MOVESPEED
+
+    # Draw the player on the surface.
+    pygame.draw.rect(windowSurface, BLACK, player)
+
+    
