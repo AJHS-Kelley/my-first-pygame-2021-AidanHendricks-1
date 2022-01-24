@@ -75,7 +75,7 @@ while True:
                 b['dir'] = DOWNRIGHT
             if b['dir'] == UPLEFT:
                 b['dir'] = UPRIGHT
-        if b['rect'].left > WINDOWWIDTH:
+        if b['rect'].right > WINDOWWIDTH:
             # The box has moved past the right
             if b['dir'] == DOWNRIGHT:
                 b['dir'] = DOWNLEFT
