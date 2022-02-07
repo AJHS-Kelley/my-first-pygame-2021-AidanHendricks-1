@@ -1,4 +1,4 @@
-# PyGame Collision Practice, Aidan Hendricks, 1/18/22, 12:48 AM, v2.0
+# PyGame Collision Practice, Aidan Hendricks, 1/18/22, 12:48 AM, v2.0.5
 
 import pygame, sys, random
 from pygame.locals import *
@@ -71,8 +71,8 @@ while True:
             if event.key == K_DOWN or event.key == K_s:
                 moveDown = False
             if event.key == K_x: # Use X to teleport player.
-                player.top = random.radiant(0, WINDOWHEIGHT - player.height)
-                player.left = random.radiant(0, WINDOWWIDTH - player.width)
+                player.top = random.randint(0, WINDOWHEIGHT - player.height)
+                player.left = random.randint(0, WINDOWWIDTH - player.width)
 
         if event.type == MOUSEBUTTONUP:
             foods.append(pygame.Rect(event.pos[0], event.pos[1], FOODSIZE, FOODSIZE))
